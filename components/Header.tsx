@@ -58,7 +58,7 @@ const Header = ({ placeholder }: any) => {
     >
       <div
         onClick={() => {
-          router.push('/')
+          router.asPath != '/login' ? router.push('/') : null
         }}
         className="relative my-auto flex h-10 cursor-pointer items-center"
       >
@@ -82,7 +82,12 @@ const Header = ({ placeholder }: any) => {
             className=" flex-grow overflow-hidden overflow-ellipsis whitespace-nowrap bg-transparent text-sm text-gray-500 outline-none"
             type="text"
           />
-          <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-[#FF385C] p-1.5 text-white md:inline-flex" />
+          <SearchIcon
+            onClick={() => {
+              searchInput && search()
+            }}
+            className="hidden h-8 cursor-pointer rounded-full bg-[#FF385C] p-1.5 text-white md:inline-flex"
+          />
         </div>
       )}
       {router.asPath == '/login' ? (
@@ -128,7 +133,7 @@ const Header = ({ placeholder }: any) => {
                     router.push('/login')
                   }, 100)
                 }}
-                className="absolute -bottom-10 right-0 mr-5 w-full rounded-full bg-white p-1.5 text-center font-semibold"
+                className="absolute -bottom-10 right-0 mr-5 w-full rounded-full bg-white p-1.5 text-center font-semibold transition duration-300"
               >
                 Exit
               </div>
