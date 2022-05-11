@@ -12,7 +12,7 @@ const MiddleBanner: NextPage = () => {
       />
       <div className="absolute top-1/2 w-full px-10 text-center lg:top-1/3">
         <h1 className="hidden pb-16 text-5xl font-bold text-white lg:inline-flex">
-          Welcome to my Graduation Project
+          Welcome to Airbnb Demo
         </h1>
         <p className=" text-lg font-semibold text-white">
           Not sure where to go? Perfect.
